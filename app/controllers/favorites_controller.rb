@@ -5,7 +5,9 @@ class FavoritesController < ApplicationController
     favorite = current_user.favorites.new(book_id: book.id)
     favorite.save
     # 元の記述はredirect_to books_path
+    
     # 同じページをリダイレクトする
+    # コメントのバリデーションがかかった後にいいねを押すとNo route matches のエラーが出るが、想定していないため、挙動として正しい。
     redirect_to request.referer
   end
 
