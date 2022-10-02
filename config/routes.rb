@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   root :to =>"homes#top"
   get "home/about"=>"homes#about"
+  # 検索ボタンが押された時、Searchesコントローラーのsearchアクションが実行されるように定義しました。
+  get "search" => "searches#search"
 
 
  # ネストさせる
