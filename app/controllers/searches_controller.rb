@@ -12,8 +12,6 @@ class SearchesController < ApplicationController
 # 検索方法params[:search]と、検索ワードparams[:word]を参照してデータを検索し、
 # 1：インスタンス変数@usersにUserモデル内での検索結果を代入します。
 # 2：インスタンス変数@booksにBookモデル内での検索結果を代入します。
-
-
       @users = User.looks(params[:search], params[:word])
     else
       @books = Book.looks(params[:search], params[:word])
