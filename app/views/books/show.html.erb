@@ -28,6 +28,25 @@
             <td>コメント件数：<%= @book.book_comments.count %></td>
                   <!--バリデーションエラー表示-->
           <%= render 'layouts/errors', obj: @book_comment %>
+          
+          
+          
+<!--ーーーーーーーーーーーーーーーーーーーーーここから星レビュー機能の追加ーーーーーーーーーーーーーーーーーーーーーーーーーー-->
+          <td>
+            <div id="star-rate<%= @book.id%>"></td>
+             <script>
+              $('#star-rate<%= @book.id %>').empty();
+              $('#star-rate<%= @book.id%>').raty({
+                 size      : 36,
+                 starOff   : '<%= asset_path('star-off.png') %>',
+                 starOn    : '<%= asset_path('star-on.png') %>',
+                 half      : false,
+                 readOnly: true,
+                 score: <%= @book.star %>,
+               });
+             </script>
+          </td>
+<!--ーーーーーーーーーーーーーーーーーーーーここまで星レビュー機能の追加ーーーーーーーーーーーーーーーーーーーーーーーーーーー-->
 
           <!--もし、本の投稿をしたユーザーと現在ログインしているユーザーが一致していたら-->
           <% if @book.user == current_user %>
