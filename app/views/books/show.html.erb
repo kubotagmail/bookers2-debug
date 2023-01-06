@@ -4,7 +4,6 @@
       <h2>User info</h2>
       <%= render 'users/info',user: @book.user %>
       <h2 class="mt-3">New book</h2>
-
       <%= render 'books/form', book: Book.new %>
     </div>
     <div class='col-md-8 offset-md-1'>
@@ -18,8 +17,6 @@
           </td>
           <td><%= link_to @book.title, @book %></td>
           <td><%= @book.body %></td>
-
-
           <!--いいね機能の部分テンプレートの呼び出し-->
           <td id="favorite-btn_<%= @book.id %>">
             <%= render 'favorites/favorite-btn',book:@book %>
@@ -28,7 +25,6 @@
             <td>コメント件数：<%= @book.book_comments.count %></td>
                   <!--バリデーションエラー表示-->
           <%= render 'layouts/errors', obj: @book_comment %>
-
 <!--ーーーーーーーーーーーーーーーーーーーーーここから星レビュー機能の追加ーーーーーーーーーーーーーーーーーーーーーーーーーー-->
           <td>
             評価<span id = "star"><%= @book.star %></span>
