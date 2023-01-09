@@ -21,17 +21,15 @@ https://github.com/wbotelhos/raty/blob/main/UPGRADE.md
     <span id = "star">
     </span>
   </div>
-  
-
 <!--ーーーーーーーーーーーーーーここまでが星レビュー機能ーーーーーーーーーーーーーーーー-->
 
   <div class="form-group">
     <%= f.submit class: 'btn btn-success' %>
   </div>
-  
 
 <% end %>
 
+<!--星レビュー-->
 <script>
   // scriptファイルをどのidの部分に配置するかを指定
   let elem = document.getElementById('star');
@@ -45,3 +43,4 @@ https://github.com/wbotelhos/raty/blob/main/UPGRADE.md
    };
   raty(elem,opt);
 </script>
+<!--星レビューここまで-->
