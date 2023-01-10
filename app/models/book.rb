@@ -10,7 +10,8 @@ class Book < ApplicationRecord
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
   end
-
+  
+  
 # 検索方法分岐
 # whereメソッドを使いデータベースから該当データを取得し、変数に代入します。
   def self.looks(search, word)
